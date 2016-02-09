@@ -12,7 +12,7 @@ RUN apt-get -y update \
 
 RUN apt-get update && apt-get -y upgrade && apt-get -y install unzip supervisor wget
 
-ENV OPENHAB_VERSION 1.7.1
+ENV OPENHAB_VERSION 1.8.1
 
 #
 # Download openHAB based on Environment OPENHAB_VERSION
@@ -29,6 +29,12 @@ COPY files/openhab-restart /etc/network/if-up.d/openhab-restart
 
 RUN mkdir -p /opt/openhab/logs
 
-EXPOSE 8080 8443 5555 9001
+EXPOSE 18080 18443 15555 19001
+
+#
+# Install yowsup2
+#
+RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
+RUN pip install yowsup2
 
 CMD ["/usr/local/bin/boot.sh"]
