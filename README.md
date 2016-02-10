@@ -1,6 +1,6 @@
 # docker-openhab
 
-Extends https://hub.docker.com/r/tdeckers/openhab/ with yowsup2.
+Extends https://hub.docker.com/r/tdeckers/openhab/ with Yowsup 2.0. Modified default ports for full network access (UPnP devices) and QNAP container station.
 
 Docker image for Openhab (1.8.1). Included is JRE 1.8.45.
 
@@ -48,6 +48,11 @@ docker run -d -p 18080:18080 -v /tmp/configuration:/etc/openhab/ lakermann/docke
 Example: run command (with your openHAB config and images)
 ```
 docker run -d -p 18080:18080 -v /tmp/configuration:/etc/openhab/ -v /tmp/images:/opt/openhab/webapps/images lakermann/docker-openhab
+```
+
+Example: run command (with your openHAB config, images and rrd4j)
+```
+docker run -d -p 18080:18080 -v /tmp/configuration:/etc/openhab/ -v /tmp/images:/opt/openhab/webapps/images -v /tmp/rrd4j:/opt/openhab/etc/rrd4j lakermann/docker-openhab
 ```
 
 Example: Map configuration and logging directory as well as allow access to Supervisor:
