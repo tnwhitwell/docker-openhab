@@ -13,6 +13,31 @@ then
   dpkg-reconfigure -f noninteractive tzdata
 fi
 
+####################
+# Configure locale
+
+LOCALEFILE=$CONFIG_DIR/locale.cfg
+
+function locale {
+  # set locale based on input file
+  while read STRING
+  do
+    echo Processing $STRING...
+	# uncomment locales based on input file
+	sed -i "/$STRING/s/^#//g" /etc/locale.gen
+	locale-gen
+	# Set default locale for the environment
+	export LC_ALL=$STRING
+  done < "$LOCALEFILE"
+}
+
+if [ -f "$LOCALEFILE" ]
+then
+  locale
+else
+  echo locale.cfg not found.
+fi
+
 ###########################
 # Configure Addon libraries
 

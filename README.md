@@ -13,8 +13,8 @@ If you do not have a openHAB configuration yet, you can start this Docker withou
 * The image exposes openHAB ports 18080 (jetty), 18443 (jetty ssl), 15555 (console) and 19001 (supervisord).
 * It expects you to map a configurations directory on the host to /etc/openhab. This allows you to inject your openhab configuration into the container (see example below).
 * To enable specific plugins, add a file with name addons.cfg in the configuration directory which lists all addons you want to add.
+* To set specific locale (date and time formar) add a file with name locale.cfg in the configuration directory which contains the local you want do set (see example below).
 * Auto-detect of devices with UPnP (i.e sonos binding): Run container with --net=host option. This will use the network interface of the host instead of creating a separate one for the container. In practice it will map 1:1 all ports on the container to the host and enable the container to receive multicast UDP messages. https://github.com/docker/docker/issues/3043
-
 
 Example content for addons.cfg:
 ```
@@ -29,6 +29,11 @@ org.openhab.binding.sonos
 org.openhab.persistence.exec
 org.openhab.persistence.logging
 org.openhab.persistence.rrd4j
+```
+
+Example content for locale.cfg:
+```
+de_CH.UTF-8
 ```
 
 * The openHAB process is managed using supervisord.  You can manage the process (and view logs) by exposing port 19001. From there it is possible to switch between NORMAL and DEBUG versions of OpenHAB runtime.

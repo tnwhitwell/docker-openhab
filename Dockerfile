@@ -1,4 +1,4 @@
-# Openhab 1.7.1
+# Openhab 1.8.1
 # * configuration is injected
 #
 FROM java:openjdk-8-jdk
@@ -30,6 +30,11 @@ COPY files/openhab-restart /etc/network/if-up.d/openhab-restart
 RUN mkdir -p /opt/openhab/logs
 
 EXPOSE 18080 18443 15555 19001
+
+#
+# Install program to configure locales
+#
+RUN apt-get install -y locales
 
 #
 # Install yowsup2
