@@ -2,7 +2,7 @@
 
 Extends https://hub.docker.com/r/tdeckers/openhab/ with Yowsup 2.0. Modified default ports for full network access (UPnP devices) and QNAP container station. Added possibility to set locale.
 
-Docker image for Openhab (1.8.1). Included is JRE 1.8.45.
+Docker image for Openhab (1.8.2). Included is JRE 1.8.45.
 
 # Official demo included
 
