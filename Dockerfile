@@ -10,9 +10,7 @@ RUN apt-get -y update \
   && apt-get -y upgrade \
   && apt-get -y install unzip supervisor wget
 
-RUN apt-get update && apt-get -y upgrade && apt-get -y install unzip supervisor wget
-
-ENV OPENHAB_VERSION 1.8.1
+ENV OPENHAB_VERSION 1.8.2
 
 #
 # Download openHAB based on Environment OPENHAB_VERSION
