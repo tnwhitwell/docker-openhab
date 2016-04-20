@@ -1,4 +1,4 @@
-# Openhab 1.8.1
+# Openhab 1.8.2
 # * configuration is injected
 #
 FROM java:openjdk-8-jdk
@@ -38,6 +38,6 @@ RUN apt-get install -y locales
 # Install yowsup2
 #
 RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
-RUN pip install yowsup2
+RUN pip install git+https://github.com/jlguardi/yowsup.git
 
 CMD ["/usr/local/bin/boot.sh"]
