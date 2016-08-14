@@ -2,11 +2,11 @@
 
 Extends https://hub.docker.com/r/tdeckers/openhab/ with Yowsup 2.0. Modified default ports for full network access (UPnP devices) and QNAP container station. Added possibility to set locale.
 
-Docker image for Openhab (1.8.2). Included is JRE 1.8.45.
+Docker image for Openhab (1.8.3). Included is JRE 1.8.45.
 
 # Official demo included
 
-If you do not have a openHAB configuration yet, you can start this Docker without one. The official openHAB demo will be started. 
+If you do not have a openHAB configuration yet, you can start this Docker without one. The official openHAB demo will be started.
 
 # Running
 
@@ -70,11 +70,11 @@ Example: run command (with Demo)
 docker run -d -p 18080:18080 lakermann/docker-openhab
 ```
 
-Start the Demo with: 
+Start the Demo with:
 ```
 http://[IP-of-Docker-Host]:18080/openhab.app?sitemap=demo
 ```
-Access Supervisor with: 
+Access Supervisor with:
 ```
 http://[IP-of-Docker-Host]:19001
 ```
