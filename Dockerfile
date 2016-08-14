@@ -10,7 +10,7 @@ RUN apt-get -y update \
   && apt-get -y upgrade \
   && apt-get -y install unzip supervisor wget
 
-ENV OPENHAB_VERSION 1.8.2
+ENV OPENHAB_VERSION 1.8.3
 
 #
 # Download openHAB based on Environment OPENHAB_VERSION
@@ -38,6 +38,6 @@ RUN apt-get install -y locales
 # Install yowsup2
 #
 RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
-RUN pip install git+https://github.com/jlguardi/yowsup.git
+RUN pip install git+https://github.com/tgalal/yowsup.git
 
 CMD ["/usr/local/bin/boot.sh"]
