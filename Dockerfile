@@ -38,6 +38,6 @@ RUN apt-get install -y locales
 # Install yowsup2
 #
 RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
-RUN pip install git+https://github.com/tgalal/yowsup.git
+RUN pip install git+https://github.com/schoerg/yowsup.git
 
 CMD ["/usr/local/bin/boot.sh"]
