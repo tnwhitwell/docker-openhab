@@ -97,7 +97,7 @@ fi
 
 ETH_FOUND=`grep "eth0\|enp0\|eno1" /proc/net/dev`
 
-if [ -n "$ETH0_FOUND" ] ;
+if [ -n "$ETH_FOUND" ] ;
 then 
   # We're in a container with regular eth0 (default)
   exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
