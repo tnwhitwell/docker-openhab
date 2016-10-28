@@ -95,7 +95,7 @@ fi
 ######################
 # Decide how to launch
 
-ETH_FOUND=`grep "eth\|enp\|eno" /proc/net/dev`
+ETH_FOUND=`grep "eth0\|enp0\|eno1" /proc/net/dev`
 
 if [ -n "$ETH0_FOUND" ] ;
 then 
