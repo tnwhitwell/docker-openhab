@@ -1,4 +1,4 @@
-# Openhab 1.8.2
+# Openhab 1.8.3
 # * configuration is injected
 #
 FROM java:openjdk-8-jdk
@@ -10,7 +10,7 @@ RUN apt-get -y update \
   && apt-get -y upgrade \
   && apt-get -y install unzip supervisor wget
 
-ENV OPENHAB_VERSION 1.8.2
+ENV OPENHAB_VERSION 1.8.3
 
 #
 # Download openHAB based on Environment OPENHAB_VERSION
@@ -27,17 +27,6 @@ COPY files/openhab-restart /etc/network/if-up.d/openhab-restart
 
 RUN mkdir -p /opt/openhab/logs
 
-EXPOSE 18080 18443 15555 19001
-
-#
-# Install program to configure locales
-#
-RUN apt-get install -y locales
-
-#
-# Install yowsup2
-#
-RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
-RUN pip install git+https://github.com/jlguardi/yowsup.git
+EXPOSE 8080 8443 5555 9001
 
 CMD ["/usr/local/bin/boot.sh"]
