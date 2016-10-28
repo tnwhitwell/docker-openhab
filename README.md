@@ -11,7 +11,7 @@ If you do not have a openHAB configuration yet, you can start this Docker withou
 
 PULL
 =======
-```docker pull tdeckers/openhab```
+```docker pull tnwhitwell/docker-openhab```
 
 Building
 ========
