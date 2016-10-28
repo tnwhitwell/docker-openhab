@@ -3,11 +3,19 @@ Overview
 
 Docker image for Openhab (1.8.3). Included is JRE 1.8.45.
 
+<<<<<<< HEAD
+=======
+Docker image for Openhab (1.8.3). Included is JRE 1.8.45.
+>>>>>>> 6ee1f07ca67181d7800348f204bc4eb12841af32
 
 Official DEMO Included
 ========
 
+<<<<<<< HEAD
 If you do not have a openHAB configuration yet, you can start this Docker without one. The official openHAB DEMO will be started. 
+=======
+If you do not have a openHAB configuration yet, you can start this Docker without one. The official openHAB demo will be started.
+>>>>>>> 6ee1f07ca67181d7800348f204bc4eb12841af32
 
 PULL
 =======
@@ -69,11 +77,11 @@ Example: run command (with Demo)
 docker run -d -p 8080:8080 tdeckers/openhab
 ```
 
-Start the Demo with: 
+Start the Demo with:
 ```
 http://[IP-of-Docker-Host]:8080/openhab.app?sitemap=demo
 ```
-Access Supervisor with: 
+Access Supervisor with:
 ```
 http://[IP-of-Docker-Host]:9001
 ```
