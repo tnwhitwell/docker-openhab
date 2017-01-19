@@ -33,6 +33,21 @@ COPY files/openhab-restart /etc/network/if-up.d/openhab-restart
 
 RUN mkdir -p /opt/openhab/logs
 
+<<<<<<< HEAD
 EXPOSE 8080 8443 5555 9001
+=======
+EXPOSE 18080 18443 15555 19001
+
+#
+# Install program to configure locales
+#
+RUN apt-get install -y locales
+
+#
+# Install yowsup2
+#
+RUN apt-get -y install python-dev python-pip libjpeg-dev zlib1g-dev 
+RUN pip install git+https://github.com/schoerg/yowsup.git
+>>>>>>> upstream/master
 
 CMD ["/usr/local/bin/boot.sh"]
