@@ -85,13 +85,16 @@ else
   echo                = using demo files =
   echo
   echo Consider running the Docker with a openhab configuration
-  echo 
+  echo
   echo --------------------------------------------------------
   cp -R /opt/openhab/demo-configuration/configurations/* /etc/openhab/
   ln -s /opt/openhab/demo-configuration/addons/* /opt/openhab/addons/
   ln -s /etc/openhab/openhab_default.cfg /etc/openhab/openhab.cfg
+  # Redirect newbie right to demo site
+  sed -i -- 's/openhab.app"/openhab.app?sitemap=demo"/g' /opt/openhab/webapps/static/index.html
 fi
 
+<<<<<<< HEAD
 ######################
 # Decide how to launch
 
@@ -106,3 +109,6 @@ else
   /usr/local/bin/pipework --wait
   exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
 fi
+=======
+exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+>>>>>>> upstream/master
